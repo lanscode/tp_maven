@@ -29,12 +29,5 @@
      </plugin>
     </plugins>
   </reporting>
-<distributionManagement>
-    <repository>
-        <id>koria-HP</id>
-        <name>koria-HP-releases</name>
-        <url>http://localhost:8081/artifactory/libs-release-local</url>
-    </repository>
-</distributionManagement>
 
 </project>
