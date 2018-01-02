@@ -7,12 +7,12 @@ pipeline {
     stages {
         stage('Compile'){
             steps{
-                sh 'mvn clean compile'
+                bat'mvn clean compile'
             }
         }
         stage ('Build') {
             steps {
-               sh 'mvn install'
+               bat 'mvn install'
             }
             post {
                 success {
@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Test'){
             steps{
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Site'){
             steps{
-                sh 'mvn site'
+                bat 'mvn site'
             }
         }
     }
