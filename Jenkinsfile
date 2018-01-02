@@ -5,8 +5,12 @@ pipeline {
         jdk 'jdk1.8.0_15'
     }
     stages {
-       
-       /* stage ('Build') {
+        stage('Compile'){
+            steps{
+                bat'mvn clean compile'
+            }       
+        }         
+        stage ('Build') {
             steps {
                bat 'mvn install'
                bat 'mvn site'
@@ -18,14 +22,8 @@ pipeline {
                     step ([$class: 'JavadocArchiver', javadocDir: './target/site/apidocs/', keepAll:true])
                 }
             }
-        }*/
-        stage('Compile'){
-            steps{
-                bat'mvn clean compile'
-            }
-        }
-     
-        /*stage('Deployement'){
+        }       
+        stage('Deployement'){
             steps{
                 bat 'mvn deploy'
             }
@@ -39,7 +37,7 @@ pipeline {
             steps{
                 bat 'mvn package'
             }
-        }*/
+        }
        
     }
 }
