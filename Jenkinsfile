@@ -13,7 +13,7 @@ pipeline {
             }
             post {
                 success {                   
-                    junit 'target/surefire-reports/*.xml' 
+                    //junit 'target/surefire-reports/*.xml' 
                    // step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/target/site/cobertura/*.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
                    // step ([$class: 'JavadocArchiver', javadocDir: './target/site/apidocs/', keepAll:true])
                 }
