@@ -69,8 +69,8 @@
     </plugins>
 
   </reporting>
-	<distributionManagement>
-                <!-- Publish versioned releases here -->
+	<!--<distributionManagement>
+        
                 <repository>
                         <id>snapshots</id>
                         <name>Snapshots</name>
@@ -78,6 +78,6 @@
                 </repository>
 
 
-	</distributionManagement>
+	</distributionManagement>-->
 
 </project>
