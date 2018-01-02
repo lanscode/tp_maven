@@ -5,11 +5,6 @@ pipeline {
         jdk 'jdk1.8.0_15'
     }
     stages {
-        stage('Compile'){
-            steps{
-                bat'mvn clean compile'
-            }
-        }
         stage ('Build') {
             steps {
                bat 'mvn install'
@@ -20,9 +15,24 @@ pipeline {
                 }
             }
         }
+        stage('Compile'){
+            steps{
+                bat'mvn clean compile'
+            }
+        }
+        stage('Deployement'){
+            steps{
+                bat 'mvn deploy'
+            }
+        }
         stage('Test'){
             steps{
                 bat 'mvn test'
+            }
+        }
+        stage('Packaging'){
+            steps{
+                bat 'mvn package'
             }
         }
         stage('Site'){
