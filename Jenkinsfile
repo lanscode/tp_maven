@@ -39,10 +39,6 @@ pipeline {
                 bat 'mvn package'
             }
         }
-        stage('Site'){
-            steps{
-                bat 'mvn site'
-            }
-        }
+       
     }
 }
