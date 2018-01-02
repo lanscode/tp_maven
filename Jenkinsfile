@@ -6,25 +6,26 @@ pipeline {
     }
     stages {
        
-        stage ('Build') {
+       /* stage ('Build') {
             steps {
                bat 'mvn install'
-              // bat 'mvn site'
+               bat 'mvn site'
             }
             post {
                 success {                   
-                    //junit 'target/surefire-reports/*.xml' 
-                   // step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/target/site/cobertura/*.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
-                   // step ([$class: 'JavadocArchiver', javadocDir: './target/site/apidocs/', keepAll:true])
+                    junit 'target/surefire-reports/*.xml' 
+                    step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/target/site/cobertura/*.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
+                    step ([$class: 'JavadocArchiver', javadocDir: './target/site/apidocs/', keepAll:true])
                 }
             }
-        }
+        }*/
         stage('Compile'){
             steps{
                 bat'mvn clean compile'
             }
         }
-        stage('Deployement'){
+     
+        /*stage('Deployement'){
             steps{
                 bat 'mvn deploy'
             }
@@ -38,7 +39,7 @@ pipeline {
             steps{
                 bat 'mvn package'
             }
-        }
+        }*/
        
     }
 }
