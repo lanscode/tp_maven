@@ -9,7 +9,7 @@ pipeline {
         stage ('Build') {
             steps {
                bat 'mvn install'
-               bat 'mvn cobertura:cobertura site'
+               bat 'mvn site'
             }
             post {
                 success {                   
