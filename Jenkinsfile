@@ -5,14 +5,14 @@ pipeline {
         jdk 'jdk1.8.0_15'
     }
 stages { 
-    agent {label 'sonarNode'}
-        stage('Sonarqube analysis') {
-    steps {
-     withSonarQubeEnv('SonarQube') {
-       bat "C:\\Program Files\\sonar\\sonar-runner-2.4\\bin\\sonar-runner.bat"
-     }
+       stage('Sonarqube analysis') {
+              agent {label 'sonarNode'}
+              steps {
+                 withSonarQubeEnv('SonarQube') {
+                   bat "C:\\Program Files\\sonar\\sonar-runner-2.4\\bin\\sonar-runner.bat"
+                 }
 
-       } 
+              } 
   }
     
        
