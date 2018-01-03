@@ -7,11 +7,8 @@ pipeline {
 stages {     
         stage('Sonarqube analysis') {
     steps {
-    script {
-             scannerHome = tool 'sonarQub';
-        }
      withSonarQubeEnv('SonarQube') {
-       bat "${ scannerHome }\\bin\\sonar-runner.bat"}
+       bat "C:\Program Files\sonar\sonar-runner-2.4\bin\sonar-runner.bat"}
 
        } 
   }
