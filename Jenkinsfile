@@ -13,7 +13,7 @@ stages {
              scannerHome = tool 'SonarScanner';
         }
      withSonarQubeEnv('SonarQube') {
-       bat "${scannerHome}\\bin\\sonar-scanner.bat"}
+       bat "${SONAR_HOME}\\bin\\sonar-runner.bat"}
 
     } 
   }
