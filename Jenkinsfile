@@ -4,7 +4,8 @@ pipeline {
         maven 'apache-maven-3.5.2'
         jdk 'jdk1.8.0_15'
     }
-stages {     
+stages { 
+    agent {label 'sonarNode'}
         stage('Sonarqube analysis') {
     steps {
      withSonarQubeEnv('SonarQube') {
