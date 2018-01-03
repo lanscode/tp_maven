@@ -8,10 +8,10 @@ stages {
         stage('Sonarqube analysis') {
     steps {
     script {
-             scannerHome = tool 'SonarScanner';
+             scannerHome = tool 'sonarQub';
         }
      withSonarQubeEnv('SonarQube') {
-       bat "${SONAR_HOME}\\bin\\sonar-runner.bat"}
+       bat "${ scannerHome }\\bin\\sonar-runner.bat"}
 
        } 
   }
