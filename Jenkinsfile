@@ -1,6 +1,6 @@
 pipeline {
-    agent 'any'
-    //agent {label 'sonarNode'}
+    //agent 'any'
+    agent {label 'sonarNode'}
     tools {
         maven 'apache-maven-3.5.2'
         jdk 'jdk1.8.0_15'
