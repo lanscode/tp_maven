@@ -69,15 +69,20 @@
     </plugins>
 
   </reporting>
-	<!--<distributionManagement>
-        
+	<distributionManagement>
+                <!-- Publish versioned releases here -->
                 <repository>
-                        <id>snapshots</id>
-                        <name>Snapshots</name>
-                        <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+                        <id>1</id>
+                        <name>Dépôt d’entreprise</name>
+                        <url>http://localhost:8081/nexus/content/repositories/localrepository/</url>
                 </repository>
 
-
-	</distributionManagement>-->
+                <!-- Publish snapshots here -->
+                <snapshotRepository>
+                      <id>1</id>
+                        <name>Dépôt d’entreprise</name>
+                        <url>http://localhost:8081/nexus/content/repositories/localrepository/</url>
+                </snapshotRepository>
+        </distributionManagement>
 
 </project>
