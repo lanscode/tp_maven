@@ -27,7 +27,7 @@ stages {
             steps{
                 bat 'mvn deploy'
             }
-       stage('Sonarqube analysis') {
+      /* stage('Sonarqube analysis') {
              
               steps {
                  withSonarQubeEnv('SonarQube') {
@@ -35,7 +35,7 @@ stages {
                  }
 
               } 
-  }
+  }*/
     
        
     }
