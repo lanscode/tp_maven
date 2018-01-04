@@ -10,6 +10,7 @@ stages {
             steps{
                 bat'mvn clean compile'
             }
+    }
         stage ('Build') {
             steps {
                bat 'mvn install'
@@ -27,12 +28,13 @@ stages {
             steps{
                 bat 'mvn deploy'
             }
+    }
    stage('Sonarqube analysis') {
              
               steps {
                  withSonarQubeEnv('SonarQube') {
                    bat "C:\\sonar-scanner-3.0.3.778-windows\\bin\\sonar-scanner.bat"
-                 }
+                  }
 
               } 
   }
