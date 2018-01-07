@@ -33,7 +33,7 @@ stages {
              
               steps {
                  withSonarQubeEnv('SonarQube') {
-                   bat "C:\\sonar-scanner-3.0.3.778-windows\\bin\\sonar-scanner.bat"
+                   bat "C:\\Program Files\\sonar\\sonarqube-6.7.1\\bin\\windows-x86-64\\StartSonar.bat"
                   }
 
               } 
