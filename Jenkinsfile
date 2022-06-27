@@ -3,7 +3,7 @@ node{
             git "https://github.com/lanscode/tp_maven"
          }
       stage("Package") {
-            sh "mvn package"
+            bat "mvn package"
          }
 
 }
