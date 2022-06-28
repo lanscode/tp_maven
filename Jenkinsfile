@@ -9,7 +9,7 @@ node{
           //def scannerHome = tool 'SonarID';
           withSonarQubeEnv('My SonarQube Server') { // If you have configured more than one global server connection, you can specify its name
             bat "mvn sonar:sonar" // bat "${scannerHome}/bin/sonar-scanner"
-    }
-  }
-}
+              }
+         }
+
 }
