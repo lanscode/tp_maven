@@ -3,6 +3,7 @@ package com.mycompany.app;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -28,7 +29,7 @@ public class CountDuplicateChars {
 		 }
 		return c;
 	}
-	public ArrayList<Character> countDuplcateChars(String s) {
+	public List<Character> countDuplcateChars(String s) {
 		char[] chars=(s.toUpperCase()).toCharArray();
 		int[] nbr = {1, 2, 3,6,7};
 		int  sum = Arrays.stream(nbr)
@@ -39,7 +40,7 @@ public class CountDuplicateChars {
 		
 		LOGGER.info("Sum is "+sum+" "+max);
 				
-		ArrayList<Character> res = new ArrayList<Character>();
+		List<Character> res = new ArrayList<>();
 		Map<Character, Integer> counts = new HashMap<>();
 		
 		for(int i=0;i<chars.length;i++) {
