@@ -2,15 +2,15 @@ package com.mycompany.app;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.OptionalInt;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+import java.util.Map.Entry;
+
+import org.apache.log4j.Logger;
 
 
 public class CountDuplicateChars {
+	public static final Logger LOGGER = Logger.getLogger(CountDuplicateChars.class);
 	public char noneRepeatableChar(String s) {
 		char c=' ';
 		s = s.toLowerCase();
@@ -37,7 +37,7 @@ public class CountDuplicateChars {
 				.reduce(0,(a,b)->a+b);	
 		int max = Arrays.stream(nbr).max().getAsInt();
 		
-		System.out.println("Sum is "+sum+" "+max);
+		LOGGER.info("Sum is "+sum+" "+max);
 				
 		ArrayList<Character> res = new ArrayList<Character>();
 		Map<Character, Integer> counts = new HashMap<>();
@@ -46,19 +46,19 @@ public class CountDuplicateChars {
 			counts.compute(chars[i],(k,v)->(v==null)?1:++v);
 		}
 		
-		for(Character j:counts.keySet()) {
-			System.out.println("j "+j+counts.get(j));
-			if(counts.get(j)>Integer.valueOf(1)) 
-				res.add(j);
+		for(Entry<Character, Integer>  j:counts.entrySet()) {
+			LOGGER.info("j "+j.getKey()+j.getValue());
+			if(j.getValue()>Integer.valueOf(1)) 
+				res.add(j.getKey());
 			}
 		return res;
 	}
 	public static void main(String[]args) {
 		CountDuplicateChars cDC = new CountDuplicateChars();
 		String name="Lancine KEITAL";
-		System.out.println(cDC.noneRepeatableChar(" noneRepeatableChar "+name));
+		LOGGER.info(cDC.noneRepeatableChar(" noneRepeatableChar "+name));
 		for(Character c:cDC.countDuplcateChars(name)) {
-			System.out.println(c);
+			LOGGER.info(c);
 		}
 		
 	}
