@@ -8,7 +8,7 @@ node{
        stage('SonarQube analysis') {
           //def scannerHome = tool 'SonarID';
           withSonarQubeEnv('SonarID') { // If you have configured more than one global server connection, you can specify its name
-            bat "mvn -X sonar:sonar" // bat "${scannerHome}/bin/sonar-scanner"
+            bat "mvn sonar:sonar" // bat "${scannerHome}/bin/sonar-scanner"
               }
          }
 
