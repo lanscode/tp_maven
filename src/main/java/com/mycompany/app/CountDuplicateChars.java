@@ -6,12 +6,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import org.apache.log4j.Logger;
+
 
 
 public class CountDuplicateChars {
-	public static final Logger LOGGER = Logger.getLogger(CountDuplicateChars.class);
+	public static final Logger LOGGER = Logger.getLogger(CountDuplicateChars.class.getName());
 	public char noneRepeatableChar(String s) {
 		char c=' ';
 		s = s.toLowerCase();
@@ -57,9 +59,9 @@ public class CountDuplicateChars {
 	public static void main(String[]args) {
 		CountDuplicateChars cDC = new CountDuplicateChars();
 		String name="Lancine KEITAL";
-		LOGGER.info(cDC.noneRepeatableChar(" noneRepeatableChar "+name));
+		LOGGER.log(Level.INFO," "+cDC.noneRepeatableChar(" noneRepeatableChar "+name));
 		for(Character c:cDC.countDuplcateChars(name)) {
-			LOGGER.info(c);
+			LOGGER.log(Level.INFO,c+" ");
 		}
 		
 	}
