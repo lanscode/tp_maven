@@ -61,7 +61,7 @@ public class CountDuplicateChars {
 		String name="Lancine KEITAL";
 		LOGGER.log(Level.INFO," "+cDC.noneRepeatableChar(" noneRepeatableChar "+name));
 		for(Character c:cDC.countDuplcateChars(name)) {
-			LOGGER.log(Level.INFO,c+" OK Test Hook ");
+			LOGGER.log(Level.INFO,c+" OK ");
 		}
 		
 	}
